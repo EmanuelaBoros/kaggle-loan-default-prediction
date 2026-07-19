@@ -62,5 +62,34 @@ models/
 âââ *.pkl
 ```
 
+Create these folders before running scripts that write outputs:
+
+```bash
+mkdir -p data predictions models
+```
+
+## Requirements
+
+This is legacy Python 2 code. It uses APIs that were later removed or renamed, such as:
+
+- `cPickle`
+- `sklearn.cross_validation`
+- `sklearn.preprocessing.Imputer`
+- Python 2 `print` statements
+
+Recommended legacy environment:
+
+```bash
+python --version  # Python 2.7 expected
+pip install numpy pandas scipy scikit-learn statsmodels matplotlib
+```
+
+For modern Python 3, the scripts will need updates such as:
+
+- Replace `cPickle` with `pickle`.
+- Replace `sklearn.cross_validation` with `sklearn.model_selection`.
+- Replace `sklearn.preprocessing.Imputer` with `sklearn.impute.SimpleImputer`.
+- Convert `print` statements to Python 3 syntax.
+
 
 
