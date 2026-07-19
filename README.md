@@ -34,4 +34,33 @@ Several scripts explore alternative classifiers, regressors, feature subsets, an
 | `glmsklearn/` | Vendored scikit-learn-style wrappers around statsmodels GLM models. |
 | `glm-sklearn-master/` | Original vendored `glm-sklearn` source snapshot. |
 
+## Expected Data Layout
+
+The scripts expect competition files under a local `data/` directory:
+
+```text
+data/
+âââ train_v2.csv
+âââ test_v2.csv
+âââ sampleSubmission.csv
+âââ train_v2_sample_10k.csv          # optional sample file used by some scripts
+âââ test_v2_sample_10k.csv           # optional sample file used by some scripts
+âââ *.pkl                            # intermediate feature-selection and CV outputs
+```
+
+Submission files are usually written under:
+
+```text
+predictions/
+âââ predictions_competition_*.csv
+```
+
+Some scripts also expect or write:
+
+```text
+models/
+âââ *.pkl
+```
+
+
 
