@@ -131,3 +131,32 @@ python regression_model_selection.py
 
 These scripts evaluate feature subsets and model choices using cross-validation.
 
+### 4. Run Competition Prediction
+
+Generate a submission-oriented prediction file:
+
+```bash
+python competition_prediction.py
+```
+
+The main prediction functions:
+
+- Read `data/train_v2.csv` and `data/test_v2.csv`.
+- Impute missing values.
+- Standardize features.
+- Predict whether each test instance has non-zero loss.
+- Predict loss values for non-zero cases.
+- Write raw predictions to `predictions/predictions.csv`.
+- Convert raw predictions to a Kaggle submission file using `data/sampleSubmission.csv`.
+
+### 5. Optional: Feature Selection
+
+Run iterative feature-selection experiments:
+
+```bash
+python iterative_feature_selection.py
+python iterative_feature_selection_last.py
+```
+
+These scripts save intermediate dictionaries in `data/`, such as selected feature sets and metric histories.
+
