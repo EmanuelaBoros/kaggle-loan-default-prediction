@@ -91,5 +91,43 @@ For modern Python 3, the scripts will need updates such as:
 - Replace `sklearn.preprocessing.Imputer` with `sklearn.impute.SimpleImputer`.
 - Convert `print` statements to Python 3 syntax.
 
+## Typical Workflow
 
+### 1. Add Kaggle Data
+
+Download the competition files from Kaggle and place them in `data/`:
+
+```text
+data/train_v2.csv
+data/test_v2.csv
+data/sampleSubmission.csv
+```
+
+The scripts assume a `loss` column in the training file and feature columns named like `f527`, `f528`, etc.
+
+### 2. Explore Binary Thresholds
+
+Use threshold search to estimate a useful cutoff for default/non-default prediction:
+
+```bash
+python find_best_threshold.py
+```
+
+The script reports cross-validation AUC and mean absolute error for thresholded predictions.
+
+### 3. Select Binary or Regression Models
+
+Binary model experiments:
+
+```bash
+python binary_model_selection.py
+```
+
+Regression model experiments:
+
+```bash
+python regression_model_selection.py
+```
+
+These scripts evaluate feature subsets and model choices using cross-validation.
 
