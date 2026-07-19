@@ -160,3 +160,23 @@ python iterative_feature_selection_last.py
 
 These scripts save intermediate dictionaries in `data/`, such as selected feature sets and metric histories.
 
+### 6. Optional: LIBLINEAR/LIBSVM Export
+
+```bash
+python liblinear_feature_elimination.py
+```
+
+This script exports selected features in a sparse text format for external linear-model tools.
+
+## Outputs
+
+Common outputs include:
+
+| Output | Description |
+|---|---|
+| `predictions/predictions.csv` | Raw predicted loss values. |
+| `predictions/predictions_competition_*.csv` | Kaggle-formatted submission files with `id,loss`. |
+| `models/*.pkl` | Pickled fitted models. |
+| `data/*generation_dict*.pkl` | Pickled feature-selection histories. |
+| `data/LogisticRegression_*.pkl` | Saved cross-validation objects or prediction probabilities. |
+
